@@ -1,0 +1,40 @@
+### Get all vehicles
+
+GET http://localhost/api/vehicles HTTP/1.1
+
+### Create a vehicle
+
+POST http://localhost/api/vehicles HTTP/1.1
+content-type: application/json
+
+{
+    "plate": "P-111BBB",
+    "type": "resident"
+}
+
+### All the records related to the parking lot
+
+GET http://localhost/api/records HTTP/1.1
+
+### Check-in (car gets in the parking lot)
+
+POST http://localhost/api/records HTTP/1.1
+content-type: application/json
+
+{
+    "plate": "P-111BBB"
+}
+
+
+### Check-out (car leaves the parking lot)
+
+PUT http://localhost/api/records HTTP/1.1
+content-type: application/json
+
+{
+    "plate": "P-111BBB"
+}
+
+### PDF report
+
+GET http://localhost/api/records/pdf HTTP/1.1

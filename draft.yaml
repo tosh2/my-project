@@ -1,0 +1,13 @@
+models:
+  Vehicle:
+    plate: string unique
+    type: string
+    relationships:
+      hasMany: Record
+  Record:
+    vehicle_id: id
+    leave_at: timestamp nullable
+    total: decimal:8,2 nullable
+
+controllers:
+  # ...
